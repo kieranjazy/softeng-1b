@@ -1,10 +1,11 @@
-<%@ page import="softeng-1b.main.College" %>
+<%@ page import="blank.*" %>
 
 <%!
     public static College college = new College();
 %>
 
 <h1>College Deploy Test</h1>
+<h2>College run() Output:\n</h2>
 <%
-    college.run();
+    out.print("<pre>" + college.run() + "</pre>");
 %>

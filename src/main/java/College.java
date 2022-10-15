@@ -1,8 +1,12 @@
+package blank;
+
 import org.kj.Course;
 import org.kj.Lecturer;
 import org.kj.Student;
 import org.kj.Module;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -12,7 +16,7 @@ public class College {
 
     }
 
-    public void run() {
+    public String run() {
         ArrayList<Student> students = new ArrayList<>(Arrays.asList(
                 new Student("John", "Smith", "2001-01-01", "1"),
                 new Student("Jenny", "Smith", "2002-02-01", "2"),
@@ -50,27 +54,33 @@ public class College {
         courses.get(0).addStudent(students.get(2));
         courses.get(1).addStudent(students.get(2));
 
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PrintStream s = new PrintStream(baos);
+
         for (Course course : courses) {
-            System.out.println("Course: " + course.getName() + "\nModules: ");
+            s.println("Course: " + course.getName() + "\nModules: ");
             for (Module module : course.getModules()) {
-                System.out.println(module.getName());
+                s.println(module.getName());
             }
-            System.out.println("\n");
+            s.println("\n");
         }
 
         for (Student student : students) {
-            System.out.println(student.getFullName());
-            System.out.println("Username: " + student.getUsername());
-            System.out.println("Course(s): ");
+            s.println(student.getFullName());
+            s.println("Username: " + student.getUsername());
+            s.println("Course(s): ");
             for (Course course : student.getCourses()) {
-                System.out.println(course.getName());
+                s.println(course.getName());
             }
-            System.out.println("Modules: ");
+            s.println("Modules: ");
             for (Module module : student.getModules()) {
-                System.out.println(module.getName());
+                s.println(module.getName());
             }
-            System.out.println("\n");
+            s.println("\n");
         }
+
+        s.flush();
+        return baos.toString();
     }
 
 }

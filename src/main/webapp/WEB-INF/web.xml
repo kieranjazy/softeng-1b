@@ -1,17 +1,16 @@
 <?xml version="1.0"?>
-<web-app
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="http://java.sun.com/xml/ns/javaee"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-        id="Assignment" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
 
     <servlet>
-        <servlet-name>MainServlet.jsp</servlet-name>
-        <jsp-file>MainServlet</jsp-file>
+        <servlet-name>MainServlet</servlet-name>
+        <jsp-file>/MainServlet.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
-        <servlet-name>MainServlet.jsp</servlet-name>
-        <url-pattern>/main</url-pattern>
+        <servlet-name>MainServlet</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
 </web-app>
