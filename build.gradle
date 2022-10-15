@@ -15,6 +15,9 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation 'com.github.Kieranjazy:softeng-assignment:0cb48dd00d'
+    // https://mvnrepository.com/artifact/javax.servlet/servlet-api
+    compileOnly group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+
 
 }
 
